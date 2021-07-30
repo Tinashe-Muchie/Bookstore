@@ -48,7 +48,7 @@ function Context({ children }) {
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    //async function provided by commerce.js to fetch the products from the backend
+    //Fetch products using the commercejs provided function to populate the products state
     const fetchProducts = async() => {
         const {data} = await commerce.products.list({
             limit: 100,
