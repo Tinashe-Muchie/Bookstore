@@ -98,11 +98,28 @@ function Context({ children }) {
             dispatch({ type: 'error', value: error.data.error.message });
         }
     }
-
-    console.log(state.products); 
+    
+    /*Extract the categories of products from the products array*/
+    const categories = {
+        management: state.products?.filter(
+            ( product ) => product.categories[0].name === 'management and leadership'
+        ),
+        history: state.products?.filter(
+            ( product ) => product.categories[0].name === 'History'
+        ),
+        ecommerce: state.products?.filter(
+            ( product ) => product.categories[0].name === 'E Commerce'
+        ),
+        algorithms: state.products?.filter(
+            ( product ) => product.categories[0].name === 'Algorithms and Data Structures'
+        ),
+        accounting: state.products?.filter(
+            ( product ) => product.categories[0].name === 'Accounting'
+        )
+    };
 
     const value = {
-        Products: state.products,
+        Categories: categories,
         Cart: state.cart,
         dispatch,
         Commerce: commerce,
