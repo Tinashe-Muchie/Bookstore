@@ -13,6 +13,8 @@ import Algorithms from './Pages/Algorithms';
 import Ecommerce from './Pages/Ecommerce';
 import History from './Pages/History';
 import Management from './Pages/Management';
+import Detailed from './Components/DetailedBook';
+import Cart from './Pages/Cart/Cart';
 
 function App() {
   return (
@@ -29,6 +31,9 @@ function App() {
           <Route exact path='/algorithms' component={ Algorithms } />
           <Route exact path='/ecommerce' component={ Ecommerce } />
           <Route exact path='/history' component={ History } />
+          <Route exact path='/detailed' component={ Detailed } />
+          <Route exact path='/cart' component={ Cart } />
+          {/*<Route exact path='/checkout' component={ Checkout} />*/}
         </Switch>
       </Router>
     </GlobalContext>  
