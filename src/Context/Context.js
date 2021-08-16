@@ -56,7 +56,7 @@ function Context({ children }) {
         dispatch({type: 'product', value: data});
     };
     
-    //use useEffect hook to call the fetchProducts at the render
+    //use useEffect hook to call the fetchProducts function at render
     useEffect( () => {
         fetchProducts();
     }, [])
@@ -117,6 +117,7 @@ function Context({ children }) {
             ( product ) => product.categories[0].name === 'Accounting'
         )
     };
+    console.log(state.cart)
 
     const value = {
         Categories: categories,
