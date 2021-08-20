@@ -1,27 +1,35 @@
 import React, { useContext } from 'react';
-import { Context } from '../Context/Context';
-import { Container, Row } from '../Components/ProductLayout';
-import ProductLayout from '../Components/ProductLayout';
+import { GlobalContext } from '../Context/Context';
+import { 
+    Wrapper,
+    StyledUOL,
+    GridContainer
+} from './Management';
+import ProductLayout from '../Components/ProductLayout/ProductLayout';
 
 function Accounting() {
 
-    const { Categories, Commerce, dispatch } = useContext(Context);
+    const { Categories } = useContext(GlobalContext);
 
     return (
-        <Container>
-            <Row>
-            {
+        <Wrapper>
+            <StyledUOL>
+                <GridContainer>
+                {
                 Categories?.accounting?.map( (book) => (
                     <ProductLayout 
-                    bookImg={book.media.source}
-                    bookPrice={book.price.formatted_with_symbol}
-                    bookId={book.id}
-                    category='accounting'
+                        bookImg={book.media.source}
+                        bookPrice={book.price.formatted_with_symbol}
+                        bookId={book.id}
+                        bookName={book.name}
+                        bookDescription={book.description}
+                        relatedBooks={book.related_products}
                     />
                 ))
-            }
-            </Row>       
-        </Container>
+                }
+                </GridContainer>
+            </StyledUOL>       
+        </Wrapper>
     );
     
 }

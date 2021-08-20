@@ -1,27 +1,35 @@
 import React, { useContext } from 'react';
-import { Context } from '../Context/Context';
-import { Container, Row } from 'react-bootstrap';
-import ProductLayout from '../Components/ProductLayout';
+import { GlobalContext } from '../Context/Context';
+import {
+    Wrapper,
+    StyledUOL,
+    GridContainer
+}   from './Management'
+import ProductLayout from '../Components/ProductLayout/ProductLayout';
 
 function History() {
 
-    const { Category, Commerce, dispatch } = useContext(Context);
+    const { Categories } = useContext(GlobalContext);
 
     return (
-        <Container>
-            <Row>
-            {
-                Category?.history?.map( (book) => (
+        <Wrapper>
+            <StyledUOL>
+                <GridContainer>
+                {
+                Categories?.history?.map( (book) => (
                     <ProductLayout 
-                    bookImg={book.media.source}
-                    bookPrice={book.price.formatted_with_symbol}
-                    bookId={book.id}
-                    category='history'
+                        bookImg={book.media.source}
+                        bookPrice={book.price.formatted_with_symbol}
+                        bookId={book.id}
+                        bookName={book.name}
+                        bookDescription={book.description}
+                        relatedBooks={book.related_products}
                     />
                 ))
-            }
-            </Row>       
-        </Container>
+                }
+                </GridContainer>
+            </StyledUOL>       
+        </Wrapper>
     )
 }
 

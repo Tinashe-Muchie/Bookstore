@@ -35,10 +35,13 @@ export default Management;
 /*Styling using styled components*/
 export const Wrapper = styled.div`
     margin: 0rem 0rem;
+    margin-bottom: 5rem;
+    margin-top: 4.5rem;
 
     @media ${device.tablet} {
         margin: 0vh 10vw;
         padding: 2vh 0vw;
+        margin-bottom: 5rem;
     }
 `;
 
