@@ -5,7 +5,6 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import styled from 'styled-components';
 import Header from './Components/Header';
 import CategoryBar from './Components/CategoryBar';
 import Home from './Pages/Home';
