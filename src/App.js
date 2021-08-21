@@ -5,6 +5,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import styled from 'styled-components';
 import Header from './Components/Header';
 import CategoryBar from './Components/CategoryBar';
 import Home from './Pages/Home';
@@ -15,6 +16,8 @@ import History from './Pages/History';
 import Management from './Pages/Management';
 import Detailed from './Components/DetailedBook';
 import Cart from './Pages/Cart/Cart';
+import Checkout from './Pages/Checkout/Checkout';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -33,8 +36,10 @@ function App() {
           <Route exact path='/history' component={ History } />
           <Route exact path='/detailed' component={ Detailed } />
           <Route exact path='/cart' component={ Cart } />
-          {/*<Route exact path='/checkout' component={ Checkout} />*/}
+          <Route exact path='/checkout' component={ Checkout } />
         </Switch>
+
+        <Footer />
       </Router>
     </GlobalContext>  
   );
