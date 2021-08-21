@@ -87,8 +87,9 @@ function Context({ children }) {
         dispatch({ type: 'cart', value: newCart });
     };
 
-    /*Take care of the checkout process using the handleCaptureCheckout function by passing the checkoutTokenID and
-    newOrder parameters.*/ 
+    /*Take care of the checkout process using the handleCaptureCheckout function by passing the 
+    checkoutTokenID and newOrder parameters. Get the order of the checkout and refresh the cart,
+    if the process returns an error capture the error */ 
     const handleCaptureCheckout = async (checkoutTokenID, newOrder) => {
         try {
             const incomingOrder = await commerce.checkout.capture(checkoutTokenID, newOrder);
@@ -117,20 +118,22 @@ function Context({ children }) {
             ( product ) => product.categories[0].name === 'Accounting'
         )
     };
-    console.log(state.cart)
 
     const value = {
         Categories: categories,
         Cart: state.cart,
         dispatch,
         Commerce: commerce,
-        handleCaptureCheckout
+        handleCaptureCheckout,
+        CheckoutToken: state.checkoutToken,
+        Order: state.order,
+        Err: state.error
     }
 
     return (
-        <GlobalContext.Provider value={
-            value
-        }>
+        <GlobalContext.Provider 
+            value={value}
+        >
             { children }
         </GlobalContext.Provider>
     )
