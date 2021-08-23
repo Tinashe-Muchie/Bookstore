@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import { DescriptionInfo } from './BookDescription';
-import { Wrapper } from '../Pages/Management';
+import { Wrapper } from '../Pages/index';
 import { GlobalContext } from '../Context/Context';
 import { device } from './index';
 

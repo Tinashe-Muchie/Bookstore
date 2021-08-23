@@ -26,9 +26,9 @@ function ProductLayout({ bookImg, bookPrice, bookId,
             <Img src={bookImg} alt='bookPic' />
             <PriceTitle>
                 {bookPrice}
-            </PriceTitle>
+            </PriceTitle>  
         </ProductList>
-        </StyledLink>        
+        </StyledLink>         
     );
 }
 
@@ -47,6 +47,32 @@ export const ProductList = styled.li`
     border-radius: 3px;
 `;
 
+/*const ImgContainer = styled.div`
+    position: relative;
+    width: auto;
+    height: auto;
+`;
+
+const Overlay = styled.div`
+    @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap');
+    font-family: 'STIX+Two+Text', Garamond, serif;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    color: #C5C6C7;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    font-size: 1.3rem;
+    padding: 6.5rem 2rem;
+    text-align: center;
+    font-weight: bold;
+
+    &:hover {
+        opacity: 1;
+    }
+`;*/
+
 export const Img = styled.img`
     width: 10rem;
     height: 15rem;
@@ -55,7 +81,7 @@ export const Img = styled.img`
 `;
 
 export const PriceTitle = styled.div`
-     @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap');
     font-family: 'STIX+Two+Text', Garamond, serif;
     color: #C5C6C7;
     font-size: 18px;

@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { GlobalContext } from '../../Context/Context';
 import styled from 'styled-components';
 import { StyledLink } from '../../Components/ProductLayout/ProductLayout';
-import { Wrapper } from '../../Pages/Management';
+import { Wrapper } from '../../Pages/index';
 import { device } from '../../Components/index.js';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { BsPlus } from 'react-icons/bs';
