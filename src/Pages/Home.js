@@ -16,6 +16,16 @@ function Home() {
                         Start shopping
                     </StyledLink>  
                 </TextWrapper>
+                <ImgWrapper>
+                    <ImgContainer>
+                        <Img src='../5amclub.jpg' alt='cover-image' />
+                        <Img src='../agile.jpg' alt='cover-image' />
+                    </ImgContainer>
+                    <ImgContainer>
+                        <Img src='../sleep.jpg' alt='cover-image' />
+                        <Img src='../strangers.jpg' alt='cover-image' />
+                    </ImgContainer>
+                </ImgWrapper>
                 </Container>
             </HomeWrapper>
         </Body>
@@ -48,14 +58,12 @@ const Container = styled.div`
     justify-content: center; 
     align-items: center;
 
-
     @media ${device.laptop} {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
     }
 `;
-
 
 const TextWrapper = styled.div`
     display: flex;
@@ -90,4 +98,29 @@ const StyledLink = styled(Link)`
     }
 `;
 
+const ImgWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: .5rem;
+    border-radius: .3rem;
+    margin-left: 1.8rem;
+`;
+
+const ImgContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-items: space-between;
+    align-items: space-between;
+`;
+
+const Img = styled.img`
+    width: 10rem;
+    height: 14rem;
+    border-radius: .75rem;
+    padding: .2rem .5rem;
+    transform: rotate(20deg)
+`;
 
